@@ -64,7 +64,7 @@ public class DGBottomSheet: UIViewController {
                 contentsView.transform = .init(translationX: 0, y: translation.y)
             }
         case .ended:
-            if translation.y > 150 {
+            if translation.y > 200 {
                 self.hide()
             } else {
                 UIView.animate(withDuration: 0.2) {
