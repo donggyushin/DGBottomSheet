@@ -51,8 +51,17 @@ public class DGBottomSheet: UIViewController {
         contentsView.addGestureRecognizer(viewPan)
     }
     
+    public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.3) {
+            self.dimmedView.alpha = 0
+            self.contentsView.transform = .init(translationX: 0, y: self.contentsViewHeight)
+        } completion: { _ in
+            self.dismiss(animated: false)
+        }
+    }
+    
     @objc private func dimmedViewTapped() {
-        hide()
+        self.dismiss(animated: true)
     }
     
     @objc private func viewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
@@ -65,7 +74,7 @@ public class DGBottomSheet: UIViewController {
             }
         case .ended:
             if translation.y > 200 {
-                self.hide()
+                self.dismiss(animated: true)
             } else {
                 UIView.animate(withDuration: 0.2) {
                     self.contentsView.transform = .init(translationX: 0, y: 0)
@@ -83,15 +92,6 @@ public class DGBottomSheet: UIViewController {
                 self.dimmedView.alpha = 0.4
                 self.contentsView.transform = .init(translationX: 0, y: 0)
             }
-        }
-    }
-    
-    private func hide() {
-        UIView.animate(withDuration: 0.3) {
-            self.dimmedView.alpha = 0
-            self.contentsView.transform = .init(translationX: 0, y: self.contentsViewHeight)
-        } completion: { _ in
-            self.dismiss(animated: false)
         }
     }
 }
