@@ -15,7 +15,7 @@ The lightest swift bottom sheet library
 
 ## Requirements
 - iOS 12.0+
-- Swift 5.0+
+- Swift 5.5+
 - Xcode 10.0+
 
 
