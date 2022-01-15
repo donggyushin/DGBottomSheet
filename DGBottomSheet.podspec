@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'DGBottomSheet'
-    s.version          = '1.0.3'
+    s.version          = '1.0.4'
     s.summary          = 'The lightest swift bottom sheet library'
     s.homepage         = 'https://github.com/donggyushin/DGBottomSheet'
     s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
