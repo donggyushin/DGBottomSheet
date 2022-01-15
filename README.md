@@ -46,5 +46,9 @@ func showBottomSheet() {
     // Make sure animated false 
     self.present(vc, animated: false)
 }
+
+// You can also hide DGBottomSheet programmatically
+let vc = DGBottomSheet(view: contentsView)
+vc.hide()
 ```
 
