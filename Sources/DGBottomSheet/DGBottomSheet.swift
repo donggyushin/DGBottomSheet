@@ -57,6 +57,7 @@ public class DGBottomSheet: UIViewController {
     
     @objc private func viewPanned(_ panGestureRecognizer: UIPanGestureRecognizer) {
         let translation = panGestureRecognizer.translation(in: self.view)
+        let velocity = panGestureRecognizer.velocity(in: self.view)
         
         switch panGestureRecognizer.state {
         case .changed:
@@ -64,7 +65,7 @@ public class DGBottomSheet: UIViewController {
                 contentsView.transform = .init(translationX: 0, y: translation.y)
             }
         case .ended:
-            if translation.y > 200 {
+            if translation.y > 200 || velocity.y > 1500 {
                 self.hide()
             } else {
                 UIView.animate(withDuration: 0.2) {
