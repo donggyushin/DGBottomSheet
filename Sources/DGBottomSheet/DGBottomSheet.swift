@@ -87,7 +87,7 @@ public class DGBottomSheet: UIViewController {
         }
     }
     
-    private func hide() {
+    public func hide() {
         UIView.animate(withDuration: 0.3) {
             self.dimmedView.alpha = 0
             self.contentsView.transform = .init(translationX: 0, y: self.contentsViewHeight)
