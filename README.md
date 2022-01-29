@@ -28,7 +28,7 @@ File > Add Packages > https://github.com/donggyushin/DGBottomSheet
 
 ### CocoaPod
 ```
-pod 'DGBottomSheet', :git => 'https://github.com/donggyushin/DGBottomSheet'
+pod 'DGBottomSheet', :git => 'https://github.com/donggyushin/DGBottomSheet.git'
 ```
 
 ## Usage
